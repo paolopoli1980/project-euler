@@ -1,7 +1,13 @@
 #Starting from xp,yp positions finds the number of bounces in an elipse before to exit
 #in -0.01<x<0.01  and y=0
 
+'''
+In laser physics, a "white cell" is a mirror system that acts as a delay line for the laser beam. The beam enters the cell, bounces around on the mirrors, and eventually works its way back out.
 
+The specific white cell we will be considering is an ellipse with the equation 4x2 + y2 = 100
+
+The section corresponding to −0.01 ≤ x ≤ +0.01 at the top is missing, allowing the light to enter and exit through the hole.
+'''
 import math
 import numpy
 import matplotlib.pyplot as plt
