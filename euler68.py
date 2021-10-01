@@ -3,6 +3,23 @@
 Created on Sat Oct 01 21:46:43 2016
 
 @author: paolo
+
+Working clockwise, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+
+It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
+
+Total	Solution Set
+9	4,2,3; 5,3,1; 6,1,2
+9	4,3,2; 6,2,1; 5,1,3
+10	2,3,5; 4,5,1; 6,1,3
+10	2,5,3; 6,3,1; 4,1,5
+11	1,4,6; 3,6,2; 5,2,4
+11	1,6,4; 5,4,2; 3,2,6
+12	1,5,6; 2,6,4; 3,4,5
+12	1,6,5; 3,5,4; 2,4,6
+By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
+
+Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum 16-digit string for a "magic" 5-gon ring?
 """
 import permutdef
 
@@ -12,7 +29,7 @@ lista=[]
 lista[:]=permutdef.permuta()
 n=[0,0,0,0,0]
 
-print "start"
+print ("start")
 maxtot=0
 for el in lista:
     cont=0
@@ -52,16 +69,13 @@ for el in lista:
     n[2]=n2[2]
     n[3]=n2[3]
     n[4]=n2[4]
-#    print n
-    #print n[0]
+
        
     if n[0][1]=='0' or n[1][1]=='0' or n[2][1]=='0' or n[3][1]=='0' or n[4][1]=='0':                     
-       # print n
-       # print "conto"
+       
         somma=[0,0,0,0,0]
         for j in range(5):
-           # print "******"
-           # print n[j]
+          
             for i in range(len(n[j])):
                 id=0
                 if i!=len(n[j])-1:
@@ -71,9 +85,7 @@ for el in lista:
                         i+=1
                 if id==0:        
                     somma[j]+=int(n[j][i])
-            #        print n[j][i]  
-             #       print somma[j]
-      
+            
         error=0
                     
         for i in range(5):
@@ -83,12 +95,12 @@ for el in lista:
                         error=1
                         
         if error==0:
-            print "processato"
+            print ("processato")
             tot=str(n[0])+str(n[1])+str(n[2])+str(n[3])+str(n[4])
             
-            if int(tot)>maxtot:
+            if int(tot)>int(maxtot):
                 maxtot=tot
-print maxtot
+print (maxtot)
                    
         
     
