@@ -3,6 +3,20 @@
 Created on Sat Sep 24 16:25:43 2016
 
 @author: paolo
+Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+
+Consider the following two triangles:
+
+A(-340,495), B(-153,-910), C(835,-947)
+
+X(-175,41), Y(-421,-714), Z(574,-645)
+
+It can be verified that triangle ABC contains the origin, whereas triangle XYZ does not.
+
+Using triangles.txt (right click and 'Save Link/Target As...'), a 27K text file containing the co-ordinates of one thousand "random" triangles, find the number of triangles for which the interior contains the origin.
+
+NOTE: The first two examples in the file represent the triangles in the example given above.
+
 """
 class triangle:
     
@@ -23,9 +37,9 @@ while stringa!="":
  
     stringa=f1.readline()
     if stringa!="":
-        print stringa+str("\n")
+        print (stringa+str("\n"))
         x1,y1,x2,y2,x3,y3=stringa.split(",")
-        print x1,y1,x2,y2,x3,y3
+        print (x1,y1,x2,y2,x3,y3)
         obj.append(triangle(x1,y1,x2,y2,x3,y3))
    
 lista=[]        
@@ -35,12 +49,12 @@ cont=0
 
 for i in obj:
 
-    print i.x1
-    print i.y1
-    print i.x2
-    print i.y2
-    print i.x3
-    print i.y3
+    print (i.x1)
+    print (i.y1)
+    print (i.x2)
+    print (i.y2)
+    print (i.x3)
+    print (i.y3)
 
     d21x=i.x2-i.x1
     d21y=i.y2-i.y1
@@ -48,7 +62,7 @@ for i in obj:
     d31y=i.y3-i.y1
     d32x=i.x3-i.x2
     d32y=i.y3-i.y2
-    print d21x,d21y,d31x,d31y,d32x,d32y
+    print (d21x,d21y,d31x,d31y,d32x,d32y)
     lim=100000000000000000000
     if d21x==0:
         t1x=lim
@@ -110,8 +124,8 @@ for i in obj:
         my3=d32x*t3y+i.x2
     listax=[mx1,mx2,mx3]
     listay=[my1,my2,my3]
-    print listax
-    print listay
+    print (listax)
+    print (listay)
     
          
     okx=0
@@ -127,7 +141,7 @@ for i in obj:
                 oky=1
     if okx==1 and oky==1:
         cont+=1
-print cont
+print (cont)
 print len(obj)
                 
             
